@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitbash.dev/schemas/coinmarketcap/asset.schema.json",
+  "title": "NormalizedAsset",
+  "type": "object",
+  "required": ["id", "name", "symbol", "slug", "cmcRank", "quotes"],
+  "properties": {
+    "id": { "type": "integer" },
+    "name": { "type": "string" },
+    "symbol": { "type": "string" },
+    "slug": { "type": "string" },
+    "cmcRank": { "type": "integer" },
+    "marketPairCount": { "type": "integer" },
+    "circulatingSupply": { "type": ["number", "null"] },
+    "selfReportedCirculatingSupply": { "type": ["number", "null"] },
+    "totalSupply": { "type": ["number", "null"] },
+    "maxSupply": { "type": ["number", "null"] },
+    "ath": { "type": ["number", "null"] },
+    "atl": { "type": ["number", "null"] },
+    "high24h": { "type": ["number", "null"] },
+    "low24h": { "type": ["number", "null"] },
+    "isActive": { "type": "integer" },
+    "lastUpdated": { "type": ["string", "null"], "format": "date-time" },
+    "dateAdded": { "type": ["string", "null"] },
+    "quotes": {
+      "type": "array",
+      "items": { "$ref": "quotes.schema.json" }
+    },
+    "isAudited": { "type": "boolean" },
+    "auditInfoList": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["auditor", "auditStatus", "auditTime", "reportUrl"],
+        "properties": {
+          "auditor": { "type": "string" },
+          "auditStatus": { "type": "string" },
+          "auditTime": { "type": "string" },
+          "reportUrl": { "type": "string" }
+        }
+      }
+    },
+    "badges": {
+      "type": "array",
+      "items": { "type": "integer" }
+    }
+  }
+}

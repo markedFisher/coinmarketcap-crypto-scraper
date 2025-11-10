@@ -1,0 +1,8 @@
+{
+  "outputDir": "data/outputs",
+  "format": ["json", "ndjson", "csv"],
+  "pageSize": 100,
+  "maxPages": 2,
+  "concurrency": 6,
+  "retries": 3
+}

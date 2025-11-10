@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bitbash.dev/schemas/coinmarketcap/quotes.schema.json",
+  "title": "Quote",
+  "type": "object",
+  "required": ["name", "price"],
+  "properties": {
+    "name": { "type": "string", "enum": ["USD", "BTC", "ETH"] },
+    "price": { "type": "number" },
+    "volume24h": { "type": ["number", "null"] },
+    "volume7d": { "type": ["number", "null"] },
+    "volume30d": { "type": ["number", "null"] },
+    "marketCap": { "type": ["number", "null"] },
+    "selfReportedMarketCap": { "type": ["number", "null"] },
+    "percentChange1h": { "type": ["number", "null"] },
+    "percentChange24h": { "type": ["number", "null"] },
+    "percentChange7d": { "type": ["number", "null"] },
+    "percentChange30d": { "type": ["number", "null"] },
+    "percentChange60d": { "type": ["number", "null"] },
+    "percentChange90d": { "type": ["number", "null"] },
+    "fullyDilluttedMarketCap": { "type": ["number", "null"] },
+    "marketCapByTotalSupply": { "type": ["number", "null"] },
+    "dominance": { "type": ["number", "null"] },
+    "turnover": { "type": ["number", "null"] },
+    "ytdPriceChangePercentage": { "type": ["number", "null"] },
+    "percentChange1y": { "type": ["number", "null"] },
+    "lastUpdated": { "type": ["string", "null"] }
+  }
+}
